@@ -1,0 +1,18 @@
+[project]
+name = "kana-flashcards"
+version = "0.1.0"
+description = "一個簡單的日文五十音練習桌面應用程式"
+authors = [
+    {name = "Your Name", email = "you@example.com"}
+]
+dependencies = [
+    "pyinstaller>=6.17.0",
+]
+requires-python = ">=3.8"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+kana-quiz = "kana_quiz:main"

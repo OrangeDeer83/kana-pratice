@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+MANIFEST
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# PyInstaller
+*.spec
+*.manifest
+
+# Python version management
+.python-version
+
+# UV lock file (可選，視團隊需求決定是否追蹤)
+# uv.lock
+
+# OS
+Thumbs.db
+desktop.ini
+
+# Build artifacts
+# 允許 dist/ 資料夾中的 exe 檔案被追蹤
+# *.exe
+*.app
+*.dmg
+
+# 但忽略其他建置產物
+build/
+*.egg

@@ -121,10 +121,30 @@ class KanaApp:
         self.entry.delete(0, tk.END)
 
     def check_answer(self, event=None):
-        user_input = self.entry.get().strip().lower()
+        # 去除所有空白字元（包括不小心按到的空白）
+        user_input = self.entry.get().replace(" ", "").strip().lower()
         if not hasattr(self, 'current_romaji'): return # 防止沒題目時報錯
 
-        if user_input == self.current_romaji:
+        # 羅馬拼音替代寫法對照表
+        romaji_alternatives = {
+            'chi': ['chi', 'ti'],
+            'shi': ['shi', 'si'],
+            'tsu': ['tsu', 'tu'],
+            'fu': ['fu', 'hu'],
+            'jo': ['jo', 'jyo'],
+            'ja': ['ja', 'jya'],
+            'ju': ['ju', 'jyu'],
+        }
+        
+        # 建立當前答案的所有可接受寫法
+        accepted_answers = [self.current_romaji]
+        for standard, alternatives in romaji_alternatives.items():
+            if self.current_romaji in alternatives:
+                accepted_answers = alternatives
+                break
+        
+        # 檢查答案是否正確
+        if user_input in accepted_answers:
             self.label_feedback.config(text="✓", fg="#2ecc71")
             self.root.after(400, lambda: self.next_question())
         else:

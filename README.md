@@ -19,7 +19,7 @@
 
 ### 方式一：直接下載執行檔（推薦）
 
-前往 [Releases 頁面](../../releases) 下載最新版本的 `五十音練習.exe`，雙擊即可執行，無需安裝 Python。
+前往 [Releases 頁面](../../releases) 下載最新版本的 `kana-pratice.exe`，雙擊即可執行，無需安裝 Python。
 
 ### 方式二：從原始碼執行
 
